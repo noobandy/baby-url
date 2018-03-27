@@ -1,0 +1,19 @@
+{
+  "name": "baby-url",
+  "version": "1.0.0",
+  "description": "A URL shortening microservice that converts big full grown adult URLs to tiny little baby URLs.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noobandy/baby-url.git"
+  },
+  "author": "Anand Mohan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noobandy/baby-url/issues"
+  },
+  "homepage": "https://github.com/noobandy/baby-url#readme"
+}
