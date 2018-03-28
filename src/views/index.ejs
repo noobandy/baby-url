@@ -7,10 +7,31 @@
     <title>Baby-URL</title>
 </head>
 <body>
-    <form id="shortItForm" action="javascript:;">
-        <input type="url" name="url">
-        <button type="submit">Shorten It</button>
-    </form>
+    <!--<form id="shortItForm" action="javascript:;">-->
+    <!--    <input type="url" name="url">-->
+    <!--    <button type="submit">Shorten It</button>-->
+    <!--</form>-->
+    <h4>
+        How to use this API.
+    </h4>
+    <hr>
+    <p>
+        To convert url to short url make a post request at url <span style="color:red"> https://node-server-noobandy.c9users.io/baby-url </span>
+        With json body 
+        <pre>
+            {
+                "url": "https://github.com/mgonto/restangular#how-do-i-handle-crud-operations-in-a-list-returned-by-restangular"
+            }
+        </pre>
+        You will receive a reponse like
+        <pre>
+            {
+                "url": "https://github.com/mgonto/restangular#how-do-i-handle-crud-operations-in-a-list-returned-by-restangular",
+                "short": "https://node-server-noobandy.c9users.io/zsxys1"
+            }
+        </pre>
+        Visting the short url will redirect you to original url.
+    </p>
     <script>
 
         let shortItForm = document.getElementById("shortItForm")

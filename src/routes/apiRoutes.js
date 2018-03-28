@@ -13,7 +13,7 @@ router.post('/baby-url', function(req, res) {
     urlShortner.toBabyURL(url, 6).then(function(short) {
         res.json({
             url: url,
-            short: short
+            short: `https://node-server-noobandy.c9users.io/${short}`
         })
     }).catch(function(err) {
         console.log(err)
