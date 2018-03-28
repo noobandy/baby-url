@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baby-URL</title>
+</head>
+<body>
+    <form id="shortItForm" action="javascript:;">
+        <input type="url" name="url">
+        <button type="submit">Shorten It</button>
+    </form>
+    <script>
+
+        let shortItForm = document.getElementById("shortItForm")
+        shortItForm.addEventListener('submit', function(e) {
+            e.preventDefault()
+            let xhr = new XMLHttpRequest()
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == XMLHttpRequest.DONE) {
+                    if(xhr.status == 200) {
+                        console.log(JSON.parse(xhr.responseText))
+                    } else {
+                        console.log(xhr.responseText)
+                    }
+                }
+            }
+
+            xhr.open('POST', `http://localhost:3000/api/baby-url`)
+            xhr.setRequestHeader('Content-Type', 'application/json')
+            let formData = {}
+            formData.url = shortItForm.querySelector('input[name="url"]').value
+            console.log(formData)
+            xhr.send(JSON.stringify(formData))
+
+        })
+    </script>
+</body>
+</html>

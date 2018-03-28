@@ -5,6 +5,7 @@ const express = require('express')
 const db = require(path.join(__dirname, './db/mongo'))
 const apiRoutes = require(path.join(__dirname, './routes/apiRoutes'))
 const redirectRoutes = require(path.join(__dirname, './routes/redirectRoutes'))
+const webAppRoutes = require(path.join(__dirname, './routes/webAppRoutes'))
 
 
 let port = process.env.PORT || 3000
@@ -17,7 +18,12 @@ let app = express()
 //     res.end("OK")
 // })
 
+app.set('views', path.join(__dirname, "./views"))
+app.set('view engine', 'ejs')
+
 app.use('/', redirectRoutes)
+
+app.use('/', webAppRoutes)
 
 app.use('/api', apiRoutes)
 

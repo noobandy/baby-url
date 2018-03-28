@@ -11,7 +11,7 @@ router.get('/:short', function(req, res) {
 
     urlShortner.toRedirectURL(short).then(function(url) {
         if(!url) {
-            res.sendStatus(400)
+            res.sendStatus(404)
         } else {
             res.redirect(url)
         } 
