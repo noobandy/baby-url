@@ -11,9 +11,10 @@ router.use(bodyParser.json())
 router.post('/baby-url', function(req, res) {
     let url = req.body.url
     urlShortner.toBabyURL(url, 6).then(function(short) {
+        let baseURL = process.env.baseURL || "https://noobandy-fcc-challenges.herokuapp.com/" 
         res.json({
             url: url,
-            short: `https://node-server-noobandy.c9users.io/${short}`
+            short: `${baseURL}${short}`
         })
     }).catch(function(err) {
         console.log(err)
